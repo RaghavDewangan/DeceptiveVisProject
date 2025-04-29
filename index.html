@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Raghav Dewangan</strong> — <em>rdewangan@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Indias rapid GDP growth will soon overshadow China's and the US economic dominance</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="proPropVisFinal.svg" alt="" />
+          <figcaption>GDP Growth Comparison: This graph illustrates annual GDP growth rates for India, China, and the United States. After experiencing a dip in 2011, India shows a steady recovery and upward trajectory, surpassing China's growth rate around 2014 and maintaining its position as the fastest-growing economy among the three by 2016. While China's growth fluctuates between 1.5-3% during this period, the United States displays a general downward trend from approximately 10.5% in 2010 to under 7% by 2016. The visualization highlights India's economic resilience and acceleration, demonstrating its emergence as a growth leader in the post-2010 period.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Utilized growth rate rather than pure GDP as data transformation - emphasizes India's lead over other countries, pushing propositions point forward. Shows relative economic performance rather than absolute economic size, which more directly adresses the proposition about India's growth trajectory. This choice raises ethical questions about representation - while growth rates are valid metrics, they can create an incomplete picture without context about economic size disparities and sustainability of growth patterns. - Scoring: 0.5</li>
+          <li>Colored India line green, leaving other lines gray. Designified other countries through color pallette, bringing viewer attention towards India's growth trend. I had the option to maybe use different dull colors for the other two countries but gave them both a static gray color to further emphasis the focus towards India. This deliberately manipulative visual hierarchy violates principles of honest data representation by using color to psychologically prioritize one data series, potentially misleading viewers who may interpret visual prominence as statistical significance. - Scoring: -1.5</li>
+          <li>Pro - proposition annotations, signifying India's consistent growth and exacerbating dips and stagnations within other countries to tune viewers towards the proposition irrespective of the visuals before them. Highlight key values such as growth rate threshold staying above 5% for India, and U.S. decline, further emphasized with a bracket to signify the current and growing difference in growth. These selective annotations represent a breach of data ethics by presenting subjective interpretations as objective facts, potentially misleading viewers who trust the visualization to present balanced analytical insights. - Scoring: -2</li>
+          <li>Simple line chart for each 3 countries makes it easy to track, assess, and conclude about countries' YoY economic growth and performance. Growth % is visually encoded into the line, giving viewers a simple visual key to following the trend displayed. This straightforward visual approach respects viewer autonomy by using a familiar, accessible chart type that most people can interpret correctly, representing an ethically sound design choice that prioritizes clarity and comprehension. - Scoring: 2</li>
+          <li>Truncated year to times of great growth for India, and decline for others, truncated timeline leads to perception of India's superiority over other countries, regardless of key economic events occurring during those times. The timeline was specifically cherry picked when US had a decline year, to make there be a larger percieved 'difference.' This deliberate temporal framing constitutes an ethical violation in data practice, as it strategically excludes contextual information that could alter viewers' conclusions, manipulating perception through selective evidence presentation. - Scoring: -2</li>          <li>Simple line chart for each 3 countries makes it easy to track, assess, and conclude about countries' YoY economic growth and performance. Growth % is visually encoded into the line, giving viewers a simple visual key to following the trend displayed - Scoring: 2</li>
+          <li>Clear declarative title makes direct claim rather than neutrally describing the data. Supported by the data, it automatically tunes readers into the proposition, giving them an already pro - proposition baseline for the visualization. This framing choice undermines viewer agency by imposing an interpretation before data examination can occur, raising ethical concerns about whether visualization should inform neutral analysis or persuade toward predetermined conclusions. Scoring: -1</li>        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="deceptiveVisFinal.svg" alt="" />
+          <figcaption>This graph displays the economic development trajectories of China, the United States, and India from 1990 to 2020, showing GDP per capita in purchasing power parity (PPP) terms on a logarithmic scale. The United States maintains the highest position throughout the period, with China demonstrating rapid growth that accelerated after 2000, surpassing India early in the timeframe. India shows steady upward movement but remains significantly below both the US and China by 2020. The annotations highlight the continued US economic dominance, China's growth performance, and characterize India's economic position, with a vertical line marking the end of the measured period in 2020.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>The logarithmic scale visually compresses the massive absolute differences between economies, making the gap between India and the US/China appear smaller than it actually is. This transformation obscures the true magnitude of difference that India would need to overcome to achieve economic dominance. The log scale is not explicitly labeled as such, which further misleads viewers unfamiliar with data visualization conventions. It was chosen as an effective tool to stifle India's metrics, hiding its growth through the compression, putting the other countries far beyond it on a visual scale. This raises ethical concerns about manipulating visual perception to control narratives and potentially deceiving audiences by obscuring mathematical transformations that significantly alter data interpretation. - Score: -1.5</li>
+          <li>Using GDP per capita shifts focus away from India's primary economic advantage (large population and overall GDP growth potential) to a metric where it inherently lags. This metric emphasizes current economic status rather than growth trajectory, working against the proposition, and even slightly over-extrapolating. A visualization focused on total GDP or growth trends would tell a substantially different story about India's economic future, whereas this one shows India as a mediocre at best competitor.  This metric selection reflects an ethical issue of framing bias, deliberately choosing measurements that disadvantage certain perspectives while claiming objectivity in data presentation. - Score: -1</li>
+          <li>The annotation "India's severe growth stagnation and decline" directly contradicts the visible upward trajectory of India's line. Similarly, "China's growth outpacing India" ignores periods where India's growth rate was comparable or higher. These annotations present opinions as facts and guide viewers to incorrect conclusions not supported by the data itself. This represents a serious ethical breach of data integrity, where commentary actively contradicts visible evidence, exploiting the trust viewers place in authoritative annotations to manipulate their understanding. - Score: -2</li>
+          <li>Cherry picked the highest economies in the world to compare against India, making it look extremely mediocre in the trend lines in comparison. United States and China are 1 and 2 in economic scale, affect, and growth. Pitting India, a developing country with high growth potention, makes it seem like a matter of David vs. Goliath in comparison. This selective comparison raises ethical questions about contextual fairness in data presentation and the responsibility to provide appropriate benchmarks rather than creating inherently unbalanced comparisons designed to diminish certain entities. - Score: -1.5</li>
+          <li>India's line is presented as a gray dashed line, making it less visually prominent than the solid colored lines for China and the US. This visual hierarchy subtly diminishes India's importance in the comparison and draws less attention to its consistent upward trajectory over the 30-year period. Utilizing this design choice was similar to what we did in the prop - proposition visual, just flipped to favor countries that are not India. It is a subtle yet effective trick to pull attention away, and designify certain metrics and trends that are visually present. This design approach raises ethical concerns about visual manipulation techniques that exploit cognitive biases and attention patterns to create predetermined impressions while maintaining plausible deniability about intent. - Score: -1</li>
+          <li>Inclusion of measurement units (PPP) clarifies and acknowledges the use of Purchasing Power Parity, a metric that favors economies at scale and larger economies such as the US and China. This transparency, while positive, raises ethical questions about whether sufficient context was provided about how this specific economic measure inherently advantages certain countries in the comparison, highlighting the ethical responsibility to fully explain measurement choices. - Score: 1</li>
+          <li>Grid lines to facilitate easy reading. No intention to blur the reading of the actual values, hence grid lines were implemented for the reader to fully grasp the displayed values for comparison and visual analysis.  This design element reflects an ethical commitment to readability and precision, though it stands in contrast to other more manipulative choices in the visualization, creating an interesting tension between apparent transparency and actual bias. - Score: 1</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Designing visualizations that hold a neutral stance on a proposition is generally speaking, not an easy task. Things such as implicing and subcionsious bias can play a role, data quality, 
+          integrity, etc... are all factors that can sway a visualization from the neutral position to a stanced one. This project pushed me to personally realize what is an ethical design decision
+          and what is one that is not. Most of the decisions I made between both visualizations landed on the side of unethical, as they swayed from a neutral stance and muddled the information to be 
+          percieved in a certain way. Given that, I think the project proved to be , while not hard, an interesting piece that caused a lot of thinking from a outside perspective. Thinking how a normal viewers
+          would percieve this data visual if it just came across in the news paper, or on instagram, were lenses that I adopted when making either visual. Given the biased nature of most media nowadays, this project was
+          extremely eye - opening for me as to all of the skewed news, visuals, and comments we are exposed to on a daily basis
+        </p>
+        <p>For the visualizations, we used a lot of, while obvious, key visual elements. Color pallette, dotted lines, annotations, etc... are all key things I changed to make the actual visual aspect skewed for or against the proposition.
+          One of the main elements I ended up using was use of color pallette. Gray insignified certain visual encodings, while green , or other vibrant colors brought major attention to it. 
+          Dotted lines also make a trendline seem less impactful, and so these were some visual choices that strongly impacted the stance of the visualization from the proposition.
+          Some more invisible changes were things such as log transformation, cherry picking the timeframe from the time series data, and the choice of WHAT data to present. Certain transformations
+          and data choices highly changed the output visual, and hence these were used to make a point clear. For example, usage of the logarithmic scale downplayed India's recent growth booms, and made it seem
+          insignificant in the face of economic giants such as China and America. These changes all coagulated to create strong visualizations when it comes to proving a point, but at what ethical cost?
+        </p>
+        <p>
+          Ethical analysis and visualization is staying as neutral as possible within the bounds of your available data. Giving the reader the untouched truth through raw data is important to be considered ethical.
+          While it takes transformations and wrangling to be able to make data presentable in the first place, skewing the data, the visuals, and comments are all ways to take away some validity of proper visuals and analysis. 
+          While the line between acceptable and misleading persuasive choices may seem, at face value, obvious, it gets more blurred the more you work on visualizations. For example, even starting off with a certain title can automatically stance you in a way
+          that would make you a biased source of information. Every small detail matters in mantaining ethical decisions, and those are able to get lost within the nuanced world of "acceptable" and "misleading" when trying to make a point to the audience.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
